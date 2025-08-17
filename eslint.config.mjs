@@ -5,7 +5,7 @@ export default antfu(
     stylistic: {
       indent: 2,
       quotes: 'single',
-      braceStyle: '1tbs',
+      braceStyle: ['1tbs', { allowSingleLine: true }],
     },
   },
   {
@@ -14,8 +14,6 @@ export default antfu(
       'node/prefer-global/process': 'off',
       'no-console': 'off',
       'antfu/no-top-level-await': 'off',
-      'brace-style': ['error', '1tbs'],
     },
-
   },
 )
