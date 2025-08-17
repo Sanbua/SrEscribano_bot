@@ -1,10 +1,11 @@
 import type { Game } from './types/timesDay.type'
 import { bot } from './bot'
-import { getDay, getMonthName, getToday } from './calcDate'
 import { sheets, spreadsheetId } from './conGoogle'
+import { getDay, getMonthName, getToday } from './functions/calcDate'
+import { createEmptyGame } from './functions/createEmptyGame'
+import { timesDay } from './functions/timesDay'
 import { gameInfo } from './util/gameInfo'
 import { months } from './util/months'
-import { timesDay } from './util/timesDay'
 import { users } from './util/users'
 
 export async function getData(gameActual: any, userActual: any, timeGame: string) {
@@ -29,11 +30,11 @@ export async function getData(gameActual: any, userActual: any, timeGame: string
 }
 
 export function resetTimesDay(): void {
-  if (timesDay.today !== getToday()) {
-    timesDay.today = getToday()
-    // Reiniciar los tiempos del día de todos los usuarios
+  const today = getToday()
+  if (timesDay.today !== today) {
+    timesDay.today = today
     users.forEach((user) => {
-      timesDay.users[user.username] = { Queens: '', Tango: '', Zip: '', MiniSudoku: '' }
+      timesDay.users[user.username] = createEmptyGame()
     })
   }
 }
@@ -56,7 +57,6 @@ export function msgComplete(): void {
     users.forEach((user) => {
       const value = timesDay.users[user.username]?.[game.name]
       message += ` ${user.firstName}: ${value ?? '(sin datos)'}\n`
-      // message += ` ${user.firstName}: ${timesDay.users[user.username][game.name]}\n`
     })
     message += `\n`
   })

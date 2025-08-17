@@ -1,5 +1,5 @@
 import { bot } from './bot'
-import { getHour, getToday } from './calcDate'
+import { getHour, getToday } from './functions/calcDate'
 
 const signals = ['SIGINT', 'SIGTERM']
 

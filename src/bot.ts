@@ -1,6 +1,6 @@
 import { Bot } from 'gramio'
-import { getHour, getToday } from './calcDate'
 import { config } from './config'
+import { getHour, getToday } from './functions/calcDate'
 import { getData } from './obtainData'
 import { gameInfo } from './util/gameInfo'
 import { regexTime } from './util/regex'
@@ -26,9 +26,11 @@ bot.on('message', async (context) => {
       const timeGame = context.text?.match(regexTime)?.[0] || '-:--'
       getData(gameActual, userActual, timeGame)
       await context.send(`Vale ${context.from.firstName}, el ${gameActual?.name} del día ${getToday()} esta apuntado con un tiempo de ${timeGame}`)
-    } else if (context.text?.toLowerCase().includes('moa')) {
+    }
+    else if (context.text?.toLowerCase().includes('moa')) {
       await context.send('MOA 😊')
-    } else {
+    }
+    else {
       await context.sendAnimation('https://c.tenor.com/PQjmqBZ7TVoAAAAd/tenor.gif', {
         caption: 'Esto no es un juego 😡',
       })
