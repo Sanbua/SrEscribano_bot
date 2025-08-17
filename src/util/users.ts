@@ -1,6 +1,7 @@
+import type { User } from '../types/users.type'
 import { mallen29_id, sandrabua_id } from '../config'
 
-export const users = [
+export const users: readonly User[] = [
   {
     id: sandrabua_id,
     firstName: 'San',
@@ -13,16 +14,16 @@ export const users = [
       MiniSudoku: 'I',
     },
   },
-  {
-    id: mallen29_id,
-    firstName: 'Carlos',
-    username: 'Mallen29',
-    languageCode: 'es',
-    position: {
-      Queens: 'D',
-      Tango: 'F',
-      Zip: 'H',
-      MiniSudoku: 'J',
-    },
-  },
-] as const
+  // {
+  //   id: mallen29_id,
+  //   firstName: 'Carlos',
+  //   username: 'Mallen29',
+  //   languageCode: 'es',
+  //   position: {
+  //     Queens: 'D',
+  //     Tango: 'F',
+  //     Zip: 'H',
+  //     MiniSudoku: 'J',
+  //   },
+  // },
+]
