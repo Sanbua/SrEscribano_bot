@@ -13,14 +13,14 @@ export const bot = new Bot(config.BOT_TOKEN).onStart(({ info }) =>
 bot.on('message', async (context) => {
   // log
   console.log(`
-    Mensaje de ${context.from.username} [${context.from.id}]: ${getHour()}  
+    Mensaje de ${context.from.username} [${context.from.id}]: Fecha ${getToday()} - ${getHour()}  
     ${context.text}
     `)
 
   const userActual = users.find(user => context.from.username === user.username)
 
   if (userActual !== undefined) {
-    const gameActual = gameInfo.find(game => context.text?.startsWith(game.text))
+    const gameActual = gameInfo.find(game => context.text?.includes(game.text))
 
     if (gameActual !== undefined) {
       const timeGame = context.text?.match(regexTime)?.[0] || '-:--'

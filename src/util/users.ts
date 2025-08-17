@@ -10,6 +10,7 @@ export const users = [
       Queens: 'C',
       Tango: 'E',
       Zip: 'G',
+      MiniSudoku: 'I',
     },
   },
   {
@@ -21,6 +22,7 @@ export const users = [
       Queens: 'D',
       Tango: 'F',
       Zip: 'H',
+      MiniSudoku: 'J',
     },
   },
 ] as const
