@@ -7,4 +7,5 @@ export interface Game {
   Queens: string
   Tango: string
   Zip: string
+  MiniSudoku: string
 }

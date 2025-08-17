@@ -33,7 +33,7 @@ export function resetTimesDay(): void {
     timesDay.today = getToday()
     // Reiniciar los tiempos del día de todos los usuarios
     users.forEach((user) => {
-      timesDay.users[user.username] = { Queens: '', Tango: '', Zip: '' }
+      timesDay.users[user.username] = { Queens: '', Tango: '', Zip: '', MiniSudoku: '' }
     })
   }
 }

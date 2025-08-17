@@ -7,11 +7,13 @@ export const timesDay: RootObject = {
       Queens: '',
       Tango: '',
       Zip: '',
+      MiniSudoku: '',
     },
     Mallen29: {
       Queens: '',
       Tango: '',
       Zip: '',
+      MiniSudoku: '',
     },
   },
 
