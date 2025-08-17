@@ -14,16 +14,16 @@ export const users: readonly User[] = [
       MiniSudoku: 'I',
     },
   },
-  // {
-  //   id: user_id_2,
-  //   firstName: firstname_user_2,
-  //   username: username_user_2,
-  //   languageCode: 'es',
-  //   position: {
-  //     Queens: 'D',
-  //     Tango: 'F',
-  //     Zip: 'H',
-  //     MiniSudoku: 'J',
-  //   },
-  // },
+  {
+    id: user_id_2,
+    firstName: firstname_user_2,
+    username: username_user_2,
+    languageCode: 'es',
+    position: {
+      Queens: 'D',
+      Tango: 'F',
+      Zip: 'H',
+      MiniSudoku: 'J',
+    },
+  },
 ]
