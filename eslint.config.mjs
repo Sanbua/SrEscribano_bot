@@ -11,7 +11,7 @@ export default antfu(
   {
     files: ['**/*.js', '**/*.ts'],
     rules: {
-      'brace-style': ['error', '1tbs', { allowSingleLine: true }],
+      '@stylistic/brace-style': ['error', '1tbs', { allowSingleLine: true }],
       'node/prefer-global/process': 'off',
       'no-console': 'off',
       'antfu/no-top-level-await': 'off',
