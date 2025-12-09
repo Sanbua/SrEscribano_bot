@@ -8,16 +8,16 @@
     "lint:fix": "npm run lint --fix"
   },
   "dependencies": {
-    "@google-cloud/local-auth": "^2.1.0",
-    "@verrou/core": "^0.5.1",
+    "@google-cloud/local-auth": "^3.0.1",
+    "@verrou/core": "^0.5.2",
     "env-var": "^7.5.0",
-    "googleapis": "^105.0.0",
-    "gramio": "^0.3.0"
+    "googleapis": "^167.0.0",
+    "gramio": "^0.4.11"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^4.13.2",
-    "@types/node": "^22.15.29",
-    "eslint": "^9.28.0",
-    "typescript": "^5.8.3"
+    "@antfu/eslint-config": "^6.5.1",
+    "@types/node": "^22.19.2",
+    "eslint": "^9.39.1",
+    "typescript": "^5.9.3"
   }
 }
