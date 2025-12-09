@@ -8,7 +8,7 @@ import { gameInfo } from './util/gameInfo'
 import { months } from './util/months'
 import { users } from './util/users'
 
-export async function getData(gameActual: any, userActual: any, timeGame: string) {
+export async function setData(gameActual: any, userActual: any, timeGame: string) {
   const positionUser = userActual.position[gameActual?.name]
   const range = `${months[getMonthName()]}!${positionUser}${getDay()}`
 
