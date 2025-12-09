@@ -8,6 +8,28 @@ import { gameInfo } from './util/gameInfo'
 import { months } from './util/months'
 import { users } from './util/users'
 
+export async function getDataTotalWins(month: string) : Promise<string> {
+  const totalValues = await sheets.spreadsheets.values.get(
+    {
+      spreadsheetId,
+      range: `${month}!C34:J34`,
+    },
+  ).then(res => res.data.values?.[0])
+
+  let message = `🏆 Resumen del mes de ${month}🏆\n\n`
+
+  gameInfo.forEach((game) => {
+    message += `En el ${game.nameDecorated},\n`
+    users.forEach((user) => {
+      message += ` ${user.firstName}: ${totalValues?.[user.winPosition[game.name]]}\n` 
+    })
+    message += `\n`
+  })
+
+  return message
+
+}
+
 export async function setData(gameActual: any, userActual: any, timeGame: string) {
   const positionUser = userActual.position[gameActual?.name]
   const range = `${months[getMonthName()]}!${positionUser}${getDay()}`
