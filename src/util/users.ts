@@ -13,6 +13,12 @@ export const users: readonly User[] = [
       Zip: 'G',
       MiniSudoku: 'I',
     },
+    winPosition: {
+      Queens: 0,
+      Tango: 2,
+      Zip: 4,
+      MiniSudoku: 6,
+    },
   },
   {
     id: user_id_2,
@@ -24,6 +30,12 @@ export const users: readonly User[] = [
       Tango: 'F',
       Zip: 'H',
       MiniSudoku: 'J',
+    },
+    winPosition: {
+      Queens: 1,
+      Tango: 3,
+      Zip: 5,
+      MiniSudoku: 7,
     },
   },
 ]
