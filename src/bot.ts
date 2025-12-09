@@ -1,8 +1,9 @@
 import { Bot } from 'gramio'
 import { config } from './config'
 import { getHour, getToday } from './functions/calcDate'
-import { setData } from './obtainData'
+import { getDataTotalWins, setData } from './obtainData'
 import { gameInfo } from './util/gameInfo'
+import { MESSAGES } from './util/messages'
 import { regexTime } from './util/regex'
 import { users } from './util/users'
 
@@ -28,13 +29,23 @@ bot.hears(
     if (gameActual !== undefined) {
       const timeGame = context.text?.match(regexTime)?.[0] || '-:--'
       setData(gameActual, userActual, timeGame)
-      await context.send(`Vale ${context.from.firstName}, el ${gameActual?.name} del día ${getToday()} esta apuntado con un tiempo de ${timeGame}`)
+      await context.send(
+        MESSAGES.GAME_OK(
+          context.from.firstName,
+          gameActual?.name,
+          getToday(),
+          timeGame,
+        ),
+      )
+    } else if (context.text?.toLowerCase().includes('resumen')) {
+      getDataTotalWins()
     } else if (context.text?.toLowerCase().includes('moa')) {
-      await context.send(`MOA 😊`)
+      await context.send(MESSAGES.MOA)
     } else {
-      await context.sendAnimation('https://c.tenor.com/PQjmqBZ7TVoAAAAd/tenor.gif', {
-        caption: 'Esto no es un juego 😡',
-      })
+      await context.sendAnimation(
+        MESSAGES.MSG_ERROR.animation,
+        { caption: MESSAGES.MSG_ERROR.caption },
+      )
     }
   },
 )
