@@ -1,3 +1,5 @@
+import { bold, format } from 'gramio'
+
 export const MESSAGES = {
   GAME_OK: (
     userName: string,
@@ -13,5 +15,7 @@ export const MESSAGES = {
     animation: 'https://c.tenor.com/PQjmqBZ7TVoAAAAd/tenor.gif',
     caption: 'Esto no es un juego 😡',
   },
+
+  MSG_ERROR_MONTH: format`No se que mes me has dicho.\nUsa ${bold('/resumen Enero')} por ejemplo.`,
 
 }
