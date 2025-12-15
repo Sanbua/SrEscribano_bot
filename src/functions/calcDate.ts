@@ -1,4 +1,4 @@
-import { months } from "../util/months"
+import { months } from '../util/months'
 
 export function getNewDate() {
   return new Date()
@@ -26,7 +26,7 @@ export function getDay() { // Número del día del mes + 2 (para la celda del ex
 
 export function extractMonthFromText(text: string): string {
   const monthText: string = months.find(
-    (month) => month && text.toLowerCase().includes(month.toLowerCase())
+    month => month && text.toLowerCase().includes(month.toLowerCase()),
   ) ?? months[getMonthName()] ?? ''
   return monthText
 }
