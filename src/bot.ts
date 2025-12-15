@@ -1,7 +1,7 @@
 import { Bot } from 'gramio'
 import { config } from './config'
 import { extractMonthFromText, getHour, getToday } from './functions/calcDate'
-import { getDataTotalWins, setData } from './obtainData'
+import { getDataToday, getDataTotalWins, setData } from './obtainData'
 import { gameInfo } from './util/gameInfo'
 import { MESSAGES } from './util/messages'
 import { regexTime } from './util/regex'
@@ -41,6 +41,9 @@ bot.hears(
       const monthText = extractMonthFromText(context.text)
       const msgTotalWins = await getDataTotalWins(monthText)
       await context.send(msgTotalWins)
+    } else if (context.text?.toLowerCase().includes('hoy')) {
+      const msgTimeToday = await getDataToday(userActual)
+      await context.send(msgTimeToday)
     } else if (context.text?.toLowerCase().includes('moa')) {
       await context.send(MESSAGES.MOA)
     } else {

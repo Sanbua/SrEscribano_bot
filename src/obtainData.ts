@@ -6,6 +6,7 @@ import { createEmptyGame } from './functions/createEmptyGame'
 import { timesDay } from './functions/timesDay'
 import { gameInfo } from './util/gameInfo'
 import { months } from './util/months'
+import { regexTime } from './util/regex'
 import { users } from './util/users'
 
 export async function getDataTotalWins(month: string): Promise<string> {
@@ -24,6 +25,19 @@ export async function getDataTotalWins(month: string): Promise<string> {
       message += ` ${user.firstName}: ${totalValues?.[user.winPosition[game.name]]}\n`
     })
     message += `\n`
+  })
+
+  return message
+}
+
+export async function getDataToday(userActual: any): Promise<string> {
+  const userData = timesDay.users[userActual.username]
+
+  let message = `⏳ ${userActual.firstName} estos son tus tiempos de hoy ⏳\n\n`
+
+  gameInfo.forEach((game) => {
+    message
+      += `${game.nameDecorated} ➜ ${userData?.[game.name].match(regexTime)?.[0] ?? 'sin mandar'} \n\n`
   })
 
   return message
