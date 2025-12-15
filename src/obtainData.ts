@@ -8,7 +8,7 @@ import { gameInfo } from './util/gameInfo'
 import { months } from './util/months'
 import { users } from './util/users'
 
-export async function getDataTotalWins(month: string) : Promise<string> {
+export async function getDataTotalWins(month: string): Promise<string> {
   const totalValues = await sheets.spreadsheets.values.get(
     {
       spreadsheetId,
@@ -21,13 +21,12 @@ export async function getDataTotalWins(month: string) : Promise<string> {
   gameInfo.forEach((game) => {
     message += `En el ${game.nameDecorated},\n`
     users.forEach((user) => {
-      message += ` ${user.firstName}: ${totalValues?.[user.winPosition[game.name]]}\n` 
+      message += ` ${user.firstName}: ${totalValues?.[user.winPosition[game.name]]}\n`
     })
     message += `\n`
   })
 
   return message
-
 }
 
 export async function setData(gameActual: any, userActual: any, timeGame: string) {
