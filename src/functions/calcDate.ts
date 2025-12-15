@@ -24,9 +24,12 @@ export function getDay() { // Número del día del mes + 2 (para la celda del ex
   return date.getDate() + 2
 }
 
-export function extractMonthFromText(text: string): string {
-  const monthText: string = months.find(
-    month => month && text.toLowerCase().includes(month.toLowerCase()),
-  ) ?? months[getMonthName()] ?? ''
-  return monthText
+export function extractMonthFromText(text: string | null): string {
+  if (text === null) {
+    return months[getMonthName()] ?? ''
+  } else {
+    return months.find(
+      month => month && text.toLowerCase().includes(month.toLowerCase()),
+    ) ?? ''
+  }
 }
