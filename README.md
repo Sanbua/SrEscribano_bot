@@ -1,6 +1,4 @@
-# Bot Sr.Escribano ⌚✍
-
-Además dispone de otras funcionalidades como consultar el resumen del mes o ver tus tiempos de ese día.
+# Bot Sr.Escribano ⌚✍ <!-- omit in toc -->
 
 Con **Sr. Escribano** puedes llevar fácilmente un historial de tus tiempos en los **juegos de LinkedIn**.
 Solo tienes que enviar tu tiempo al bot por **Telegram** y él lo guardará automáticamente en una **Google Sheet** para que puedas consultarlo.
@@ -9,26 +7,24 @@ Con varios jugadores podrás comparar vuestros tiempos y ver quién es el más r
 
 También puedes consultar un resumen mensual para revisar tu progreso o ver tus tiempos de ese día.
 
-**Si te gusta el bot, dale una ⭐[estrella](https://github.com/Sanbua/SrEscribano_bot/stargazers) al repositorio.**
+Si te gusta el bot, dale una ⭐ **estrella** al repositorio.
 
-## 📑 Tabla de contenidos
+## 📑 Tabla de contenidos <!-- omit in toc -->
 
-- [Bot Sr.Escribano ⌚✍](#bot-srescribano-)
-  - [📑 Tabla de contenidos](#-tabla-de-contenidos)
-  - [🚀 Características principales](#-características-principales)
-  - [🛠 Tecnologías utilizadas](#-tecnologías-utilizadas)
-  - [📌 Comandos principales](#-comandos-principales)
-  - [⚙️ Instalación y configuración](#️-instalación-y-configuración)
-    - [1️⃣ Preparar el repositorio](#1️⃣-preparar-el-repositorio)
-    - [2️⃣ Crear la hoja de cálculo](#2️⃣-crear-la-hoja-de-cálculo)
-    - [3️⃣ Configurar Google Cloud](#3️⃣-configurar-google-cloud)
-    - [4️⃣ Configurar Telegram](#4️⃣-configurar-telegram)
-    - [5️⃣ Variables de entorno](#5️⃣-variables-de-entorno)
-    - [6️⃣ Personalización de usuarios](#6️⃣-personalización-de-usuarios)
-    - [7️⃣ Iniciar el bot](#7️⃣-iniciar-el-bot)
-  - [📊 Estado del proyecto](#-estado-del-proyecto)
-  - [📝 Licencia](#-licencia)
-  - [⭐ Contribuciones y agradecimientos](#-contribuciones-y-agradecimientos)
+- [🚀 Características principales](#-características-principales)
+- [🛠 Tecnologías utilizadas](#-tecnologías-utilizadas)
+- [📌 Comandos principales](#-comandos-principales)
+- [⚙️ Instalación y configuración](#️-instalación-y-configuración)
+  - [1 - Preparar el repositorio](#1---preparar-el-repositorio)
+  - [2 - Crear la hoja de cálculo](#2---crear-la-hoja-de-cálculo)
+  - [3 - Configurar Google Cloud](#3---configurar-google-cloud)
+  - [4 - Configurar Telegram](#4---configurar-telegram)
+  - [5 - Variables de entorno](#5---variables-de-entorno)
+  - [6 - Personalización de usuarios](#6---personalización-de-usuarios)
+  - [7 - Iniciar el bot](#7---iniciar-el-bot)
+- [📊 Estado del proyecto](#-estado-del-proyecto)
+- [📝 Licencia](#-licencia)
+- [⭐ Contribuciones y agradecimientos](#-contribuciones-y-agradecimientos)
 
 ## 🚀 Características principales
 
@@ -65,34 +61,32 @@ También puedes consultar un resumen mensual para revisar tu progreso o ver tus 
 |------------|------------|------------|
 | ![total](./src/images/total.jpg) | ![hoy](./src/images/total.jpg) | ![resumen](./src/images/total.jpg) |
 
----
-
 ## ⚙️ Instalación y configuración
 
-### 1️⃣ Preparar el repositorio
+### 1 - Preparar el repositorio
 
 ```bash
-git clone <URL_DEL_REPO>
+git clone https://github.com/Sanbua/SrEscribano_bot.git
 cd <NOMBRE_DEL_REPO>
 npm install
 ```
 
-### 2️⃣ Crear la hoja de cálculo
+### 2 - Crear la hoja de cálculo
 
 - Puedes usar este ejemplo: [Ejemplo de Google Sheets](https://docs.google.com/spreadsheets/d/1sKFdz1JlsxcmnS4KwEodB_6U97zr1C8ZkwezjLLfw3U/edit?usp=sharing)
 
-### 3️⃣ Configurar Google Cloud
+### 3 - Configurar Google Cloud
 
-1. Crea un proyecto en [Google Cloud Console](https://console.cloud.google.com/)
-2. Habilita la **Google Sheets API**
-3. Crea credenciales de tipo **Cuenta de servicio** y descarga el **archivo JSON**
-4. Comparte la hoja de cálculo con el email de la cuenta de servicio y dale permisos de **Editor**
+- Crea un proyecto en [Google Cloud Console](https://console.cloud.google.com/)
+- Habilita la **Google Sheets API**
+- Crea credenciales de tipo **Cuenta de servicio** y descarga el **archivo JSON**
+- Comparte la hoja de cálculo con el email de la cuenta de servicio y dale permisos de **Editor**
 
-### 4️⃣ Configurar Telegram
+### 4 - Configurar Telegram
 
 - Crea un bot en Telegram con [BotFather](https://t.me/BotFather) y obtén el token de acceso.
 
-### 5️⃣ Variables de entorno
+### 5 - Variables de entorno
 
 Crea un archivo `.env.production` (puedes usar `.env.example` como guía) y añade las siguientes variables de entorno:
 
@@ -105,12 +99,13 @@ Crea un archivo `.env.production` (puedes usar `.env.example` como guía) y aña
 | **FIRSTNAME_USER_1** | El nombre del jugador. Este será el que use el bot cuando se dirija a él |
 | **USERNAME_USER_1** | El nombre de usuario de Telegram del jugador (sin el @) |
 | **USER_ID_2** | Para añadir más jugadores |
+| **FIRSTNAME_USER_2** | ... |
 
-### 6️⃣ Personalización de usuarios
+### 6 - Personalización de usuarios
 
 - En `src/util/users.ts` puedes modificar las posiciones que corresponden a cada jugador en la hoja de cálculo.
 
-### 7️⃣ Iniciar el bot
+### 7 - Iniciar el bot
 
 ```
 npm run start
