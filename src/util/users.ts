@@ -1,5 +1,5 @@
 import type { User } from '../types/users.type'
-import { user_id_2, user_id_1 } from '../config'
+import { firstname_user_1, firstname_user_2, user_id_1, user_id_2, username_user_1, username_user_2 } from '../config'
 
 export const users: readonly User[] = [
   {

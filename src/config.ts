@@ -14,3 +14,9 @@ export const sheet = env.get('SHEET_ID').required().asString()
 
 export const user_id_1 = env.get('USER_ID_1').required().asString()
 export const user_id_2 = env.get('USER_ID_2').required().asString()
+
+export const firstname_user_1 = env.get('FIRSTNAME_USER_1').required().asString()
+export const username_user_1 = env.get('USERNAME_USER_1').required().asString()
+
+export const firstname_user_2 = env.get('FIRSTNAME_USER_2').required().asString()
+export const username_user_2 = env.get('USERNAME_USER_2').required().asString()
